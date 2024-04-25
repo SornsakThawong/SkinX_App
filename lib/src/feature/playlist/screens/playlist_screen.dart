@@ -1,15 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:skin_x_app/src/feature/playlist/controllers/playlist_controller.dart';
 
 class PlaylistScreen extends StatelessWidget {
-  const PlaylistScreen({super.key});
+  PlaylistScreen({super.key});
+  final _playlistCtrl = Get.put(PlaylistController());
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        // backgroundColor: Colors.red,
-        title: const Text("Mixed for you"),
-      ),
+          // backgroundColor: Colors.red,
+          title: const Text("Mixed for you"),
+          ),
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: () => _playlistCtrl.playlistMe(),
+      // ),
+      
       // body: GridView.builder(
       //   padding: const EdgeInsets.symmetric(horizontal: 15),
       //   itemCount: 10,
