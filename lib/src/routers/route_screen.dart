@@ -4,6 +4,7 @@ import 'package:skin_x_app/src/bindings/navbar/navbar_binding.dart';
 import 'package:skin_x_app/src/feature/auth/screens/login_screen.dart';
 import 'package:skin_x_app/src/feature/initial/screens/nav_bar_screen.dart';
 import 'package:skin_x_app/src/feature/initial/screens/splash_screen.dart';
+import 'package:skin_x_app/src/feature/playlist/screens/playlist_detail_screen.dart';
 import 'package:skin_x_app/src/routers/route_path.dart';
 
 class RouteScreen {
@@ -22,6 +23,11 @@ class RouteScreen {
     GetPage(
       name: RoutePath.navBar,
       page: () => NavBarScreen(),
+      binding: NavbarBinding(),
+    ),
+    GetPage(
+      name: RoutePath.detail,
+      page: () => PlaylistDetailScreen(),
       binding: NavbarBinding(),
     ),
   ];

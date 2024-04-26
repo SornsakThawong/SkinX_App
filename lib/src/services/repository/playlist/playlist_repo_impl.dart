@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:dio/dio.dart';
 import 'package:skin_x_app/src/core/config/app_config.dart';
 import 'package:skin_x_app/src/services/api/dio_service.dart';
@@ -20,6 +22,9 @@ class PlaylistRepoImpl extends DioService implements PlaylistRepo {
       "description": description,
       "public": false
     };
+    // log("message Url : $endpoint");
+    // log("message Token : $token");
+    // log("message Data : $data");
     return await httpDio.post(endpoint, data: data, options: options);
   }
 

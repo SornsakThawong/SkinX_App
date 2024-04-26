@@ -1,4 +1,3 @@
-import 'dart:developer';
 import 'dart:io';
 
 import 'package:dio/dio.dart';
@@ -90,22 +89,13 @@ Exception _parseDioErrorResponse(DioException dioError) {
   //     httpCode: statusCode, status: status ?? "", message: serverMessage ?? "");
 
   try {
-    log(' >>>>>>>>>>>>>>>>>>>>>> a: $statusCode');
-
     if (statusCode == -1 || statusCode == HttpStatus.ok) {
       statusCode = dioError.response?.data["statusCode"];
-      log(' >>>>>>>>>>>>>>>>>>>>>> b: $statusCode');
     }
     status = dioError.response?.data["status"];
     serverMessage = dioError.response?.data["message"];
-    log(' >>>>>>>>>>>>>>>>>>>>>> c: $status');
-    log(' >>>>>>>>>>>>>>>>>>>>>> d: $serverMessage');
+    // ignore: unused_catch_stack
   } catch (e, s) {
-    // logger.i("$e");
-    // logger.i(s.toString());
-    log(' >>>>>>>>>>>>>>>>>>>>>> e: ${e.toString()}');
-    log(' >>>>>>>>>>>>>>>>>>>>>> f: ${s.toString()}');
-
     serverMessage = "Something went wrong. Please try again later.";
   }
 

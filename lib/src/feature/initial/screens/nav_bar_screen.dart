@@ -10,21 +10,23 @@ class NavBarScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Obx(
       () => Scaffold(
+        // floatingActionButton: FloatingActionButton(
+        //   onPressed: () => navBarCtrl.onRefreshToken(),
+        // ),
         body: SafeArea(
           child: Center(
             child: navBarCtrl.screens.elementAt(navBarCtrl.selectedIndex),
           ),
         ),
         bottomNavigationBar: BottomNavigationBar(
-          
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
               icon: Icon(Icons.home),
               label: 'Home',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.search),
-              label: 'Search',
+              icon: Icon(Icons.person),
+              label: 'Profile',
             ),
           ],
           type: BottomNavigationBarType.fixed,
